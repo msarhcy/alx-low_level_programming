@@ -1,27 +1,21 @@
 #include "holberton.h"
-
 /**
- * jack_bauer - display time 24h.
- *
- * Return: Always 0.
+ * jack_bauer - prints time table in this format: HH:MM
+ * Return: the sum of two numbers.
  */
 void jack_bauer(void)
 {
-	int i, j, k, y, m, t;
+	int h, m;
 
-	for (i = 0; i < 24 ; i++)
+	for (h = 0; h < 24; h++)
 	{
-		k = i / 10;
-		y = i % 10;
-		for (j = 0; j < 60; j++)
+		for (m = 0; m < 60; m++)
 		{
-			m = j / 10;
-			t = j % 10;
-			_putchar('0' + k);
-			_putchar('0' + y);
+			_putchar((h / 10) + '0');
+			_putchar((h % 10) + '0');
 			_putchar(':');
-			_putchar('0' + m);
-			_putchar('0' + t);
+			_putchar((m / 10) + '0');
+			_putchar((m % 10) + '0');
 			_putchar('\n');
 		}
 	}

@@ -1,25 +1,24 @@
 #include <stdio.h>
 /**
- * main - even libber abbaci
- *
- * Return: void
- */
+  * main - sum even fibonacci numbers under 4 million.
+  * Return: Nothing.
+  */
 int main(void)
 {
-	unsigned int i, j, y, k, s;
+	unsigned long count, i, j, k, sums;
 
-	i = 1;
-	j = 2;
-	y = 3;
-	k = 2;
-	for (s = 2; s <= 32; s++)
+	i = sums = 0;
+	j = 1;
+	for (count = 0; count < 50; count++)
 	{
-		if (y % 2 == 0)
-			k = k + y;
+		k = i + j;
 		i = j;
-		j = y;
-		y = i + j;
+		j = k;
+		if (k % 2 == 0 && k < 4000000)
+		{
+			sums += k;
+		}
 	}
-	printf("%u\n", k);
+	printf("%lu\n", sums);
 	return (0);
 }
